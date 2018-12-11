@@ -1,0 +1,10 @@
+/progetto1/nbproject/private/
+nbproject
+
+
+**/nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
