@@ -8,6 +8,8 @@ $quadrato->setAltezza(4);
 
 $area = $quadrato->area();
 $perimetro = $quadrato->perimetro();
+$diagonale = $quadrato->diagonale();
 
-echo "l'area è: $area\n\n";
+echo "l'area è: $area\n";
 echo "il perimetro è: $perimetro\n";
+echo "la diagonale è: $diagonale\n";

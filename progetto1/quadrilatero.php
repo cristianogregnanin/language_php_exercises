@@ -32,5 +32,8 @@ class quadrilatero {
         return 2*($this->base + $this->altezza);
     }
 
+    function diagonale() {
+        return sqrt(pow($this->base,2)+pow($this->altezza,2));
+    }
 
 }
