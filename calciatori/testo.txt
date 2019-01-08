@@ -1,0 +1,6 @@
+Il programma calciatori deve avere i seguenti requisiti:
+1) mostrare in output tutta la lista dei calciatori
+2) mostrare in output tutti i calciatori appartenenti ad una certa squadra
+3) mostrare in output la squadra di calcio che ha all'attivo più reti
+4) mostrare in output il calciatore più vecchio di tutto il campionato
+4) mostrare in output il centrocampista che ha segnato più reti
