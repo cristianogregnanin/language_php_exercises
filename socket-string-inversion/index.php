@@ -1,5 +1,6 @@
 <?php
 
+include 'service.php';
 
 $service = new Service('localhost', 1313);
 

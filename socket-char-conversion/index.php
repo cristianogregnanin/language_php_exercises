@@ -1,6 +1,5 @@
 <?php
 
-
 $carattere = 'y';
 
 $service_port = 1313;
@@ -13,7 +12,7 @@ $result = socket_connect($socket, $address, $service_port);
 socket_write($socket, $carattere, strlen($carattere));
 
 $carattere = socket_read($socket, strlen($carattere));
-    
+
 socket_close($socket);
 
 echo "il carattere convertito in maiuscolo è: {$carattere}";
