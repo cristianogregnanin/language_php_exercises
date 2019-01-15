@@ -4,3 +4,6 @@ Il programma calciatori deve avere i seguenti requisiti:
 3) mostrare in output la squadra di calcio che ha all'attivo più reti
 4) mostrare in output il calciatore più vecchio di tutto il campionato
 4) mostrare in output il centrocampista che ha segnato più reti
+
+La lista dei calciatori consiste in un file chiamato calciatori.txt
+La lista delle squadre consiste in un file chiamato squadre.txt
