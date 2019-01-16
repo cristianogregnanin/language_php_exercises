@@ -12,14 +12,14 @@ for ($i = 0; $i < count($players); $i++) {
 
     echo "{$players[$i]}";
 }
+echo "\n";
+echo "\n";
 
-foreach ($players as $player) {
+foreach ($players as $index => $player) {
+    echo "player number: {$index}\n";
     echo $player;
+    $fields = explode(" ", $player);
+    foreach ($fields as $field)
+        echo "\t {$field}";
+    echo "\n";
 }
-
-
-
-foreach ($players as $key => $value) {
-    echo "key: {$key}, value: {$value}";
-}
-
