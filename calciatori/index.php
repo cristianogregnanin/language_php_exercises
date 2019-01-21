@@ -6,20 +6,10 @@
  * and open the template in the editor.
  */
 
-$players = file('calciatori.txt');
+include 'Fantacalcio.php';
 
-for ($i = 0; $i < count($players); $i++) {
+$fantacalcio = new Fantacalcio('calciatori.txt');
 
-    echo "{$players[$i]}";
-}
-echo "\n";
-echo "\n";
-
-foreach ($players as $index => $player) {
-    echo "player number: {$index}\n";
-    echo $player;
-    $fields = explode(" ", $player);
-    foreach ($fields as $field)
-        echo "\t {$field}";
-    echo "\n";
-}
+$fantacalcio->print_players();
+//$fantacalcio->print_players_in("juve");
+//$fantacalcio->team_with_more_goal();

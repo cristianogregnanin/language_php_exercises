@@ -4,8 +4,8 @@ include 'service.php';
 
 $service = new Service('localhost', 1313);
 
-$service->setString1("pippo");
-$service->setString2("pluto");
+$service->setString1("cristiano");
+$service->setString2("gregnanin");
 
 $result = $service->reverse();
 
