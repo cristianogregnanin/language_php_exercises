@@ -86,4 +86,19 @@ class Fantacalcio {
         return array_unique($teams);
     }
 
+    public function get_older() {
+        $max = 0;
+        foreach ($this->players as $player) {
+            if ($player->getAge() > $max) {
+                $older = $player;
+                $max = $player->getAge();
+            }
+        }
+        return $older;
+    }
+
+    public function get_score() {
+        
+    }
+
 }
