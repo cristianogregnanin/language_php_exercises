@@ -1,3 +1,6 @@
 buffon portiere 35 juve 0
 gattuso centrocampista 40 milan 13
 totti attaccante 34 roma 15
+ronaldo attaccante 30 juve 20
+icardi attaccante 26 inter 6
+derossi centrocampista 22 roma 20

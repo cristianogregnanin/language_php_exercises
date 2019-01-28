@@ -11,5 +11,6 @@ include 'Fantacalcio.php';
 $fantacalcio = new Fantacalcio('calciatori.txt');
 
 $fantacalcio->print_players();
-//$fantacalcio->print_players_in("juve");
-//$fantacalcio->team_with_more_goal();
+$fantacalcio->print_players_in("juve");
+
+echo "la squadra con più goal è: {$fantacalcio->team_with_more_goal()}\n";
