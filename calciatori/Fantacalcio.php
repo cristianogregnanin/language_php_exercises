@@ -98,7 +98,24 @@ class Fantacalcio {
     }
 
     public function get_score() {
-        
+        $players = $this->getCentrocampisti();
+        $max = 0;
+        foreach ($players as $player) {
+            if ($player->getGoal() > $max) {
+                $bomber = $player;
+                $max = $player->getGoal();
+            }
+        }
+        return $bomber;
+    }
+
+    private function getCentrocampisti() {
+        $centrocampisti = [];
+        foreach ($this->players as $player) {
+            if ($player->getRole() == "centrocampista")
+                array_push($centrocampisti, $player);
+        }
+        return $centrocampisti;
     }
 
 }
