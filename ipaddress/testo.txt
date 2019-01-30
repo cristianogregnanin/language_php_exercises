@@ -1,5 +1,5 @@
 Il programma deve leggere il file addresses.txt e deve scrivere nel file
-valid.txt tutti gli indirizzi ip che sono validi.
+valids.txt tutti gli indirizzi ip che sono validi.
 
 
 Si implementino i metodi dichiarati nell'interfaccia e si estenda la classe
