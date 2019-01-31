@@ -16,5 +16,5 @@ interface DbManagerInterface {
 
     public function write();
 
-    public function setContent();
+    public function setContent($param);
 }

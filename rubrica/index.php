@@ -6,7 +6,46 @@
  * and open the template in the editor.
  */
 
-echo $rubrica->search('3406256325');
+include 'DbManager.php';
+
+/*
+$db = new DbManager('database.txt');
+
+$db->read();
+
+
+$db->setContent("\nNicolas Cezza 3653214263");
+$db->write();
+*/
+
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*echo $rubrica->search('3406256325');
 
 echo $rubrica->search('cristiano');
 
@@ -16,7 +55,7 @@ echo $rubrica->search('l');
 
 echo $rubrica->search('340');
 
-$rubrica->add("cristiano","gregnanin","3405896587");
+$rubrica->add("cristiano","gregnanin","3405896587");*/
 
 
 
