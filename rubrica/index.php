@@ -6,9 +6,9 @@
  * and open the template in the editor.
  */
 
-include 'DbManager.php';
-include 'User.php';
-include 'Rubrica.php';
+
+include_once 'User.php';
+include_once 'Rubrica.php';
 
 /*
   $db = new DbManager('database.txt');
@@ -18,25 +18,41 @@ include 'Rubrica.php';
 
   $db->setContent("\nNicolas Cezza 3653214263");
   $db->write();
+ * 
+ * echo $rubrica->search('cristiano');
+
+  echo $rubrica->search('luca');
+
+  echo $rubrica->search('l');
+
+  echo $rubrica->search('340');
  */
 
-echo $rubrica->search('3406256325');
+/*
+  $rubrica->add("cristiano", "gregnanin", "3405896587");
 
-echo $rubrica->search('cristiano');
+  $user = new User("cristiano", "gregnanin", "3405896587");
 
-echo $rubrica->search('luca');
+  $rubrica->add($user->getName(), $user->getSurname(), $user->getPhone());
 
-echo $rubrica->search('l');
+  $user->setName("Roberto");
+  $rubrica->update($user);
 
-echo $rubrica->search('340');
+  $rubrica->remove($user); */
 
-$rubrica->add("cristiano", "gregnanin", "3405896587");
 
-$user = new User("cristiano", "gregnanin", "3405896587");
+$rubrica = new Rubrica('database.txt');
+$user = $rubrica->search("2563652145");
+if ($user)
+    echo "utente: {$user->getName()}";
+else
+    echo 'non esiste';
+
+
+$user = new User("davide", "fiorini", "3283656985");
 
 $rubrica->add($user->getName(), $user->getSurname(), $user->getPhone());
 
-$user->setName("Roberto");
-$rubrica->update($user);
+//$user = $rubrica->search("2563652145");
+//$rubrica->remove($user);
 
-$rubrica->remove($user);

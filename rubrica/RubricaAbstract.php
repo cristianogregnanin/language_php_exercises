@@ -11,24 +11,27 @@
  *
  * @author cristiano
  */
+include_once 'DbManager.php';
+
 abstract class RubricaAbstract {
 
     private $content;
+    private $db;
 
     public function __construct($path) {
-        $db = new DbManager($path);
-        $db->read();
-        $this->content = $db->getContent();
+        $this->db = new DbManager($path);
+        $this->db->read();
+        $this->content = $this->db->getContent();
     }
 
-    public function search() {
+    public function search($param) {
         
     }
 
     public function add($name, $surname, $phone) {
 
-        $user = $name . $surname . $phone;
-        $db->write($user);
+        $this->db->setContent("\n" . $name . " " . $surname . " " . $phone);
+        $this->db->write();
     }
 
     public function setContent($param) {
