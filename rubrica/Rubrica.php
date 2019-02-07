@@ -16,16 +16,49 @@ include_once 'User.php';
 
 class Rubrica extends RubricaAbstract {
 
+    public function remove($user) {
+
+        if (!$this->search($user->getPhone()))
+            return false;
+
+        $rubrica = $this->getContent();
+        unset($rubrica[$user->getId()]);
+
+        $this->getDb()->setContent($rubrica);
+        $this->getDb()->write("w");
+        return true;
+    }
+
+    public function update($user) {
+
+        if (!$this->search($user->getPhone()))
+            return false;
+
+        $rubrica = $this->getContent();
+        unset($rubrica[$user->getId()]);
+        
+        array_push($rubrica, $user->toString());       
+        
+
+        $this->getDb()->setContent($rubrica);
+        $this->getDb()->write("w");
+        return true;
+    }
+
     public function search($param) {
-        foreach ($this->getContent() as $value) {
+        foreach ($this->getContent() as $key => $value) {
             $fields = explode(' ', $value);
 
             $name = $fields[0];
             $surname = $fields[1];
             $phone = $fields[2];
 
-            if (strcmp(trim($phone), trim($param)) == 0)
-                return new User($name, $surname, $phone);
+
+            if (strcmp(trim($phone), trim($param)) == 0) {
+                $user = new User($name, $surname, $phone);
+                $user->setId($key);
+                return $user;
+            }
         }
 
         return false;

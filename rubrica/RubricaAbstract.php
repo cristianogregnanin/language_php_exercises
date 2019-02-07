@@ -30,8 +30,8 @@ abstract class RubricaAbstract {
 
     public function add($name, $surname, $phone) {
 
-        $this->db->setContent("\n" . $name . " " . $surname . " " . $phone);
-        $this->db->write();
+        $this->db->setContent("{$name} {$surname} {$phone}\n");
+        $this->db->write("");
     }
 
     public function setContent($param) {
@@ -40,6 +40,10 @@ abstract class RubricaAbstract {
 
     public function getContent() {
         return $this->content;
+    }
+
+    public function getDb() {
+        return $this->db;
     }
 
 }

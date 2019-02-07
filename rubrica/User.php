@@ -16,6 +16,7 @@ class User {
     private $name;
     private $surname;
     private $phone;
+    private $id;
 
     public function __construct($name, $surname, $phone) {
         $this->name = $name;
@@ -35,6 +36,14 @@ class User {
         $this->phone = $param;
     }
 
+    public function setId($param) {
+        $this->id = $param;
+    }
+
+    public function getId() {
+        return $this->id;
+    }
+
     public function getName() {
         return $this->name;
     }
@@ -45,6 +54,11 @@ class User {
 
     public function getPhone() {
         return $this->phone;
+    }
+    
+    public function toString() {
+        return "\n{$this->name} {$this->surname} {$this->phone}";
+        
     }
 
 }

@@ -31,12 +31,19 @@ class DbManager implements DbManagerInterface {
         return $this->content;
     }
 
-    public function read() {
+    public function getPath() {
+        return $this->path;
+    }
+
+    function read() {
         $this->content = file($this->path);
     }
 
-    public function write() {
-        file_put_contents($this->path, $this->content, FILE_APPEND);
+    public function write($mod) {
+        if ($mod == "w")
+            file_put_contents($this->path, $this->content);
+        else
+            file_put_contents($this->path, $this->content, FILE_APPEND);
     }
 
 }
