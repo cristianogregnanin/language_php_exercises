@@ -1,0 +1,9 @@
+Si vuole gestire un concessionario di automobili. Le automobili possono essere
+spostate da un parcheggio all'altro. Le automobili sono identificate da una 
+targa mentre i parcheggi sono identificati da un numero intero univoco. 
+Si vuole poter creare un nuovo parcheggio e assegnare ad esso una nuova 
+automobile, si vuole inoltre poter spostare da un parcheggio esistente ad un 
+altro parcheggio un automobile precedentemente parcheggiata. Ogni volta
+che un automobile transita di parcheggio in parcheggio occorre tenere conto
+del numero di viaggi che essa sta affrontando. Quando si deve scegliere quale
+automobile spostare si preferisce quella con meno spostamenti all'attivo.
