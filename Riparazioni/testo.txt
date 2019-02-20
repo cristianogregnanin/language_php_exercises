@@ -1,0 +1,37 @@
+Una ditta per la riparazione di caldaie desidera gestire elettronicamente propri interventi a domicilio. A tal fine si consideri la classe Riparazione, avente come variabili d’istanza indirizzo (stringa) e priorita (int), dove la seconda variabile `e un numero non negativo che rappresenta la priorità della riparazione.
+
+Si consideri inoltre la classe Tecnico, avente come variabili d’istanza nome (stringa) e riparazione (riferimento ad un oggetto di classe Riparazione). 
+Sviluppare tutti i metodi della classe sotto riportata.
+
+public class DittaRiparazioni {
+private ArrayList<Riparazione> riparazioni;
+private Tecnico[] tecnici;
+private int numeroTecnici;
+public DittaRiparazioni(int maxTecnici){...}
+public boolean aggRiparazione(String unIndirizzo, int unaPriorita){...}
+public ArrayList<Riparazione> riparazioniInAttesa(){...}
+public Riparazione prossimaRiparazione(){...}
+public void assegnaRiparazione(){...}
+public void terminaRiparazione(String unNome){...}
+public boolean aggTecnico(String unNome){...}
+public void ferie(ArrayList<String> listaNomi){...}
+}
+La variabile d’istanza riparazioni rappresenta la lista di richieste di riparazioni nel sistema. La variabile d’istanza tecnici rappresenta la lista di tecnici della ditta. Nel sistema non devono mai essere presenti più riparazioni con lo stesso indirizzo oppure più tecnici con lo stesso nome.
+
+Il metodo aggRiparazione aggiunge al sistema una nuova richiesta di riparazione. Il metodo restituisce true solo se l’operazione è eseguita con successo.
+
+Il metodo riparazioniInAttesa restituisce la lista delle riparazioni nel sistema non ancora assegnate ad un tecnico.
+
+Il metodo prossimaRiparazione restituisce la riparazione con più alta priorità non ancora assegnata ad un tecnico (risolvere arbitrariamente i casi di parità).
+
+Il metodo assegnaRiparazione assegna ad un qualsiasi tecnico libero, se ne esiste almeno uno, la riparazione con più alta priorità tra quelle non ancora prese in carico. Non assegnare mai più di un tecnico ad una singola riparazione.
+
+Il metodo terminaRiparazione libera il tecnico avente il nome specificato dalla propria riparazione , e rimuove  dal sistema la riparazione stessa.
+
+Il metodo aggTecnico aggiunge un nuovo tecnico al sistema solo se il numero di riparazioni in attesa supera la metà del numero totale di riparazioni nel sistema. Il metodo restituisce true solo se l’operazione è eseguita con successo.
+
+Infine, il metodo ferie rimuove dal sistema tutti i tecnici il cui nome appare nella lista passata come argomento esplicito, e rimuove dal sistema anche le riparazioni ad essi assegnate.
+
+Consiglio:
+Il metodo più difficile è riparazioniInAttesa, per avere una lista di prenotazioni che non sono assegnate ad alcun tecnico è necessario creare un nuovo Array e copiare all’interno di esso tutto il contenuto dell’Array riparazioni. Successivamente si tolgano dall’Array tutte le riparazioni che
+risultano già assegnate a un tecnico.
