@@ -12,7 +12,7 @@
  */
 interface SearcherInterface {
 
-    public function searchCar();
+    public function searchCar($param);
 
-    public function searchPark();
+    public function searchPark($param);
 }
