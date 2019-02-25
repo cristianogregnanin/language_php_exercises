@@ -16,4 +16,12 @@ class Riparazione {
     private $indirizzo;
     private $priorita;
 
+    public function getIndirizzo() {
+        return $this->indirizzo;
+    }
+
+    public function getPriorita() {
+        return intval($this->priorita);
+    }
+
 }
