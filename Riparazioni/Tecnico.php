@@ -16,4 +16,24 @@ class Tecnico {
     private $nome;
     private $riparazione;
 
+    public function __construct($nome) {
+        $this->nome = $nome;
+    }
+
+    public function setRiparazione($param) {
+        $this->riparazione = $param;
+    }
+
+    public function getPriorita() {
+        return intval($this->priorita);
+    }
+
+    public function getNome() {
+        return $this->nome;
+    }
+
+    public function getRiparazione() {
+        return $this->riparazione;
+    }
+
 }

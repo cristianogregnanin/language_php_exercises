@@ -16,6 +16,11 @@ class Riparazione {
     private $indirizzo;
     private $priorita;
 
+    public function __construct($indirizzo, $priorita) {
+        $this->indirizzo = $indirizzo;
+        $this->priorita = intval($priorita);
+    }
+
     public function getIndirizzo() {
         return $this->indirizzo;
     }

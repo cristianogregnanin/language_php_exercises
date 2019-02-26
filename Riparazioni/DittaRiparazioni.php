@@ -45,7 +45,13 @@ class DittaRiparazioni implements DittaRiparazioniInterface {
     }
 
     public function assegnaRiparazione() {
-        
+        $riparazione = $this->prossimaRiparazione();
+        foreach ($this->tecnici as $tecnico) {
+            if (!$tecnico->getRiparazione()) {
+                $tecnico->setRiparazione($riparazione);
+                break;
+            }
+        }
     }
 
     public function ferie($listaNomi) {
@@ -81,7 +87,24 @@ class DittaRiparazioni implements DittaRiparazioniInterface {
     }
 
     public function terminaRiparazione($unNome) {
-        
+        foreach ($this->tecnici as $tecnico) {
+
+            if (strcmp(trim($tecnico->getName()), trim($unNome)) == 0) {
+                $riparazioneTerminata = $tecnico->getRiparazione();
+                $tecnico->setRiparazione(null);
+            }
+        }
+
+        foreach ($this->riparazioni as $key => $riparazione) {
+
+            $indirizzo1 = trim($riparazione->getIndirizzo());
+            $indirizzo2 = trim($riparazioneTerminata->getIndirizzo());
+
+            if (strcmp($indirizzo1, $indirizzo2) == 0) {
+                $index = $key;
+            }
+        }
+        unset($this->riparazioni[$index]);
     }
 
     public function GetRiparazioni() {
