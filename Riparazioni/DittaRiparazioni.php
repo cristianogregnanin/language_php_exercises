@@ -23,7 +23,7 @@ class DittaRiparazioni implements DittaRiparazioniInterface {
     public function __construct($tecnici_path, $riparazioni_path) {
         foreach (file($tecnici_path) as $tecnico) {
             $fields = explode(" ", $tecnico);
-            array_push($this->tecnici, new Tecnico($fields[0], $fields[1]));
+            array_push($this->tecnici, new Tecnico($fields[0]));
         }
 
         foreach (file($riparazioni_path) as $riparazione) {
@@ -54,8 +54,21 @@ class DittaRiparazioni implements DittaRiparazioniInterface {
         }
     }
 
-    public function ferie($listaNomi) {
-        
+    public function ferie($tecniciInFerie) {
+
+        foreach ($this->tecnici as $key => $tecnico) {
+
+            foreach ($tecniciInFerie as $tecnicoInFerie) {
+
+                $nome1 = trim($tecnico->getNome());
+                $nome2 = trim($tecnicoInFerie->getNome());
+
+                if (strcmp($nome1, $nome2) == 0) {
+                    $this->terminaRiparazione($nome1);
+                    unset($this->tecnici[$key]);
+                }
+            }
+        }
     }
 
     public function prossimaRiparazione() {
@@ -76,10 +89,12 @@ class DittaRiparazioni implements DittaRiparazioniInterface {
 
 
             foreach ($this->tecnici as $tecnico) {
-                $indirizzo1 = trim($riparazione->getIndirizzo());
-                $indirizzo2 = trim($tecnico->getRiparazione()->getIndirizzo());
-                if (strcmp($indirizzo1, $indirizzo2) == 0) {
-                    unset($riparazioniInAttesa[$k]);
+                if ($tecnico->getRiparazione() != null) {
+                    $indirizzo1 = trim($riparazione->getIndirizzo());
+                    $indirizzo2 = trim($tecnico->getRiparazione()->getIndirizzo());
+                    if (strcmp($indirizzo1, $indirizzo2) == 0) {
+                        unset($riparazioniInAttesa[$k]);
+                    }
                 }
             }
         }
@@ -87,24 +102,32 @@ class DittaRiparazioni implements DittaRiparazioniInterface {
     }
 
     public function terminaRiparazione($unNome) {
+        $riparazioneTerminata = null;
+
         foreach ($this->tecnici as $tecnico) {
 
-            if (strcmp(trim($tecnico->getName()), trim($unNome)) == 0) {
-                $riparazioneTerminata = $tecnico->getRiparazione();
-                $tecnico->setRiparazione(null);
+            if (strcmp(trim($tecnico->getNome()), trim($unNome)) == 0) {
+                if ($tecnico->getRiparazione()) {
+                    $riparazioneTerminata = $tecnico->getRiparazione();
+                    $tecnico->setRiparazione(null);
+                }
             }
         }
 
-        foreach ($this->riparazioni as $key => $riparazione) {
+        if ($riparazioneTerminata != null) {
 
-            $indirizzo1 = trim($riparazione->getIndirizzo());
-            $indirizzo2 = trim($riparazioneTerminata->getIndirizzo());
+            foreach ($this->riparazioni as $key => $riparazione) {
 
-            if (strcmp($indirizzo1, $indirizzo2) == 0) {
-                $index = $key;
+                $indirizzo1 = trim($riparazione->getIndirizzo());
+                $indirizzo2 = trim($riparazioneTerminata->getIndirizzo());
+
+                if (strcmp($indirizzo1, $indirizzo2) == 0) {
+                    $index = $key;
+                }
             }
+
+            unset($this->riparazioni[$index]);
         }
-        unset($this->riparazioni[$index]);
     }
 
     public function GetRiparazioni() {
