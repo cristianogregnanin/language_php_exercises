@@ -1,0 +1,5 @@
+Si istanzino 5 case differenti e si mostri a video la casa più grande.
+Si mostrino tutte le case appartenti alla categoria "villa".
+Si mostrino tutte le case gialle
+Si mostrino tutte le ville bianche
+
