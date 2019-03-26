@@ -15,10 +15,20 @@ class Casa {
 
     private $metri;
     private $colore;
+    private $categoria;
 
-    public function __construct($metri, $colore) {
+    public function __construct($metri, $colore, $categoria) {
         $this->metri = $metri;
         $this->colore = $colore;
+        $this->categoria = $categoria;
+    }
+
+    public function SetCategoria($param) {
+        $this->categoria = $param;
+    }
+
+    public function GetCategoria() {
+        return $this->categoria;
     }
 
     public function SetColore($param) {
@@ -37,5 +47,4 @@ class Casa {
         return $this->metri;
     }
 
-    
 }

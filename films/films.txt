@@ -1,0 +1,5 @@
+Si vuole realizzare un'applicazione che si colleghi al database films e mostri
+in output i seguenti dati: 
+Il film più recente, il film più vecchio, in quanti films ha recitato S.loren,
+le sale con una capienza maggiore di 150, tutti i films il cui titolo inizia per 
+'C', tutti i films di genere storico. 

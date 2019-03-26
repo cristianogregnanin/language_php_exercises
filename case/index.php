@@ -1,20 +1,14 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-
 include "Casa.php";
 
 $case = [];
-$case[0] = new Casa(150, "grigio");
-$case[1] = new Casa(15, "bianco");
-$case[2] = new Casa(10, "giallo");
-$case[3] = new Casa(5150, "grigio");
-$case[4] = new Casa(6150, "grigio");
+$case[0] = new Casa(150, "grigio", "villa");
+$case[1] = new Casa(15, "bianco", "appartamento");
+$case[2] = new Casa(10, "giallo", "appartamento");
+$case[3] = new Casa(5150, "grigio", "villa");
+$case[4] = new Casa(6150, "grigio", "Villa");
+$case[5] = new Casa(650, "bianco", "Villa");
 
 
 $casaMax = $case[0];
@@ -24,23 +18,24 @@ for ($i = 1; $i < count($case); $i++) {
         $casaMax = $casa;
 }
 
-echo "la casa piu grande ha metri: {$casaMax->getMetri()}";
+echo "la casa piu grande ha metri: {$casaMax->getMetri()}\n";
+
+for ($i = 0; $i < count($case); $i++) {
+    $casa = $case[$i];
+    if (strtolower($casa->getCategoria()) == "villa")
+        echo "la casa è una: {$casaMax->getCategoria()}\n";
+}
+
+for ($i = 0; $i < count($case); $i++) {
+    $casa = $case[$i];
+    if (strtolower($casa->getColore()) == "giallo")
+        echo "la casa è: {$casa->getColore()}, \"{$casa->getCategoria()}\"\n";
+}
 
 
-
-
-/*
-
-$appartamento = new Casa(70, "bianco");
-var_dump($appartamento);
-
-$casa = new Casa(50, "bianco");
-$casa->SetColore("Verde");
-echo $casa->getColore();
-$casa->SetMetri(75);
-
-var_dump($casa);
-
-$casa2 = new Casa(80, "Gialla");
-var_dump($casa2);
-*/
+for ($i = 0; $i < count($case); $i++) {
+    $casa = $case[$i];
+    if (strtolower($casa->getColore()) == "bianco")
+        if (strtolower($casa->getCategoria()) == "villa")
+            echo "la casa è: {$casa->getColore()} ed è una: {$casa->getCategoria()}\n";
+}
