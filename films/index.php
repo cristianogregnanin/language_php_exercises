@@ -11,16 +11,18 @@ include 'Wrapper.php';
 $wrapper = new Wrapper();
 
 $recent = $wrapper->getRecentFilm();
-var_dump($recent);
 
-
-/*
 $older = $wrapper->getOlderFilm();
+var_dump($older);
 
 $films = $wrapper->findFilmsByActor("S.loren");
+echo count($films);
+
 
 $rooms = $wrapper->findRoomsGreaterThan(150);
+var_dump($rooms);
 
+/*
 $films = $wrapper->findFilmsByTitle("C");
 
 $films = $wrapper->findFilmsByCategory("storico");

@@ -13,16 +13,15 @@
  */
 include 'Database.php';
 include 'Film.php';
+include 'Sala.php';
 
 class Wrapper {
 
     public function getRecentFilm() {
 
 
-        $database = new Database("localhost", "3306", "cristiano", "6");
-        $connection = $database->connect("films");
         $sql = "select * from films.films";
-        $films = $connection->query($sql)->fetchAll(PDO::FETCH_CLASS, 'Film');
+        $films = $this->connector()->query($sql)->fetchAll(PDO::FETCH_CLASS, 'Film');
 
         $recentFilm = new Film();
         foreach ($films as $film) {
@@ -31,6 +30,56 @@ class Wrapper {
         }
 
         return $recentFilm;
+    }
+
+    public function getOlderFilm() {
+
+
+        $sql = "select * from films.films";
+        $films = $this->connector()->query($sql)->fetchAll(PDO::FETCH_CLASS, 'Film');
+
+        $olderFilm = $films[0];
+        foreach ($films as $film) {
+            if ($film->getAnnoDiProduzione() < $olderFilm->getAnnoDiProduzione())
+                $olderFilm = $film;
+        }
+
+        return $olderFilm;
+    }
+
+    public function findFilmsByActor($actor) {
+
+
+
+        $sql = <<<QUERY
+select distinct * from films, recite, attori
+where attori.nome = '$actor'
+and films.id = recite.film_id
+and attori.id = recite.attore_id
+QUERY;
+
+
+        return $this->connector()->query($sql)->fetchAll(PDO::FETCH_CLASS, 'Film');
+    }
+
+    public function findRoomsGreaterThan($number) {
+
+        $sql = "select * from films.sale;";
+        $sale = $this->connector()->query($sql)->fetchAll(PDO::FETCH_CLASS, 'Sala');
+
+        $array = [];
+        foreach ($sale as $sala) {
+
+            if (intval($sala->getPosti()) > $number)
+                array_push($array, $sala);
+        }
+
+        return $array;
+    }
+
+    private function connector() {
+        $database = new Database("localhost", "3306", "cristiano", "6");
+        return $database->connect("films");
     }
 
 }
