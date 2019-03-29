@@ -77,6 +77,18 @@ QUERY;
         return $array;
     }
 
+    public function findFilmsByCategory($category) {
+
+        $sql = "select * from films.films where genere = '{$category}'";
+        return $this->connector()->query($sql)->fetchAll(PDO::FETCH_CLASS, 'Film');
+    }
+
+    public function findFilmsByTitle($char) {
+
+        $sql = "select * from films where titolo like '{$char}%'";
+        return $this->connector()->query($sql)->fetchAll(PDO::FETCH_CLASS, 'Film');
+    }
+
     private function connector() {
         $database = new Database("localhost", "3306", "cristiano", "6");
         return $database->connect("films");

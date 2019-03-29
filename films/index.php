@@ -22,8 +22,11 @@ echo count($films);
 $rooms = $wrapper->findRoomsGreaterThan(150);
 var_dump($rooms);
 
-/*
-$films = $wrapper->findFilmsByTitle("C");
 
 $films = $wrapper->findFilmsByCategory("storico");
-*/
+var_dump($films);
+
+
+$films = $wrapper->findFilmsByTitle("C");
+echo count($films);
+
