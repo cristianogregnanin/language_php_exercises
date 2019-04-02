@@ -1,6 +1,7 @@
 <?php
 
 include "Casa.php";
+include "Appartamento.php";
 
 $case = [];
 $case[0] = new Casa(150, "grigio", "villa");
@@ -9,6 +10,9 @@ $case[2] = new Casa(10, "giallo", "appartamento");
 $case[3] = new Casa(5150, "grigio", "villa");
 $case[4] = new Casa(6150, "grigio", "Villa");
 $case[5] = new Casa(650, "bianco", "Villa");
+$case[6] = new Appartamento(650, "bianco", "Villa", "secondo");
+
+
 
 
 $casaMax = $case[0];
@@ -39,3 +43,6 @@ for ($i = 0; $i < count($case); $i++) {
         if (strtolower($casa->getCategoria()) == "villa")
             echo "la casa è: {$casa->getColore()} ed è una: {$casa->getCategoria()}\n";
 }
+
+
+

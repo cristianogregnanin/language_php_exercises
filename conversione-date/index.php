@@ -11,15 +11,15 @@ $days = [];
   $days["dom"] = "domenica"; */
 
 $days = [
-    "mon" => ["it" => "lunedi", "en" => "monday"],
+    "mon" => ["it" => "lunedi", "en" => "monday", "de" => "montag"],
     "tue" => ["it" => "martedi", "en" => "tuesday"]
 ];
 
-/* var_dump($days);
+ var_dump($days);
   echo json_encode($days);
 
   echo "lunedi in inglese si dice: {$days["mon"]["en"]}";
- */
+ 
 foreach ($days as $key => $value) {
     echo "{$key}: \n";
     foreach ($value as $language => $day) {
