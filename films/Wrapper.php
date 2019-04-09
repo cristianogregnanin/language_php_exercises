@@ -12,8 +12,8 @@
  * @author cristiano
  */
 include 'Database.php';
-include 'Film.php';
-include 'Sala.php';
+include 'dto/Film.php';
+include 'dto/Sala.php';
 
 class Wrapper {
 

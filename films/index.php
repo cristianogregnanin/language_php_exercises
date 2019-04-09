@@ -6,8 +6,10 @@
  * and open the template in the editor.
  */
 
-include 'Wrapper.php';
 
+
+include 'Wrapper.php';
+/*
 $wrapper = new Wrapper();
 
 $recent = $wrapper->getRecentFilm();
@@ -29,4 +31,12 @@ var_dump($films);
 
 $films = $wrapper->findFilmsByTitle("C");
 echo count($films);
+
+*/
+var_dump(Film::fetchAll());
+
+$f = new Film();
+$f->setId(12);
+$f->delete();
+var_dump(Film::fetchAll());
 

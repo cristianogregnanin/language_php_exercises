@@ -10,8 +10,7 @@ $case[2] = new Casa(10, "giallo", "appartamento");
 $case[3] = new Casa(5150, "grigio", "villa");
 $case[4] = new Casa(6150, "grigio", "Villa");
 $case[5] = new Casa(650, "bianco", "Villa");
-$case[6] = new Appartamento(650, "bianco", "Villa", "secondo");
-
+$case[6] = new Appartamento(650, "bianco", "appartamento", "secondo");
 
 
 
