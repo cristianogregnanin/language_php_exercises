@@ -11,6 +11,7 @@
  *
  * @author cristiano
  */
+include_once '/home/cristiano/language_php_exercises/films/Database.php';
 
 class Film {
 
@@ -22,6 +23,22 @@ class Film {
 
     public function getId() {
         return $this->id;
+    }
+
+    public function getNazionalita() {
+        return $this->nazionalita;
+    }
+
+    public function getRegista() {
+        return $this->regista;
+    }
+
+    public function getGenere() {
+        return $this->genere;
+    }
+
+    public function getTitolo() {
+        return $this->titolo;
     }
 
     public function setId($param) {

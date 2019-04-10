@@ -4,8 +4,17 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
+
+<?php
+include_once '/home/cristiano/language_php_exercises/films/dto/Film.php';
+//include_once 'Database.php';
+?>
+
 <html>
     <head>
+        <meta charset="UTF-8">
+        <title>Index</title>
+
         <style>
             table {
                 font-family: arial, sans-serif;
@@ -24,11 +33,11 @@ and open the template in the editor.
             }
         </style>
 
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     </head>
     <body>
+
+
         <h2>Films</h2>
 
         <a href="" >Crea film</a>
@@ -43,16 +52,19 @@ and open the template in the editor.
                 <th>Anno di Produzione</th>
                 <th>azioni</th>
             </tr>
-            <tr>
-                <td>1</td>
-                <td>Maria Anders</td>
-                <td>Storico</td>
-                <td>Germany</td>
-                <td>Leone</td>
-                <td>2010</td>
-                <td><a href="" >Modifica</a> | <a href="" >Elimina</a></td>
 
-            </tr>
+
+            <?php foreach (Film::fetchAll() as $film) { ?>
+                <tr>
+                    <td><?php echo $film->getId() ?></td>
+                    <td><?php echo $film->getTitolo() ?></td>
+                    <td><?php echo $film->getGenere() ?></td>
+                    <td><?php echo $film->getNazionalita() ?></td>
+                    <td><?php echo $film->getRegista() ?></td>
+                    <td><?php echo $film->getAnnoDiProduzione() ?></td>
+                    <td><a href="" >Modifica</a> | <a href="" >Elimina</a></td>
+                </tr>
+            <?php } ?>
         </table>
 
     </body>
