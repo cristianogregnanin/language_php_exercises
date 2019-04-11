@@ -7,7 +7,7 @@ and open the template in the editor.
 
 <?php
 include_once '/home/cristiano/language_php_exercises/films/dto/Film.php';
-//include_once 'Database.php';
+
 ?>
 
 <html>

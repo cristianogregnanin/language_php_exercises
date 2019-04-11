@@ -65,4 +65,11 @@ class Film {
         return $database->connect("films");
     }
 
+    public static function Create($titolo, $anno_di_produzione, $genere, $regista, $nazionalita) {
+        
+        
+        
+        
+    }
+
 }
