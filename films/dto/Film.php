@@ -41,14 +41,58 @@ class Film {
         return $this->titolo;
     }
 
-    public function setId($param) {
-        $this->id = $param;
+    public function setGenere($param) {
+        $this->genere = $param;
+    }
+
+    public function setRegista($param) {
+        $this->regista = $param;
+    }
+
+    public function setNazionalita($param) {
+        $this->nazionalita = $param;
+    }
+
+    public function setAnnoDiProduzione($param) {
+        $this->anno_di_produzione = $param;
+    }
+
+    public function setTitolo($param) {
+        $this->titolo = $param;
+    }
+
+    public function save() {
+        $id = $this->id;
+        $titolo = $this->titolo;
+        $anno_di_produzione = $this->anno_di_produzione;
+        $genere = $this->genere;
+        $regista = $this->regista;
+        $nazionalita = $this->nazionalita;
+
+        $conn = Film::connector();
+
+        $sql = $conn->prepare("update films.films set nazionalita =:nazionalita, regista = :regista, genere = :genere, titolo = :titolo, anno_di_produzione = :anno_di_produzione where id = :id; ");
+        $sql->bindParam(':id', $id);
+        $sql->bindParam(':titolo', $titolo);
+        $sql->bindParam(':anno_di_produzione', $anno_di_produzione);
+        $sql->bindParam(':genere', $genere);
+        $sql->bindParam(':regista', $regista);
+        $sql->bindParam(':nazionalita', $nazionalita);
+
+        $aaaaa= $sql->execute();
+        $sql->commit();
+
+        var_dump($aaaaa);
+        
+        $sql->debugDumpParams();
+
+        
     }
 
     public function delete() {
 
         $conn = Film::connector();
-        $id = $this->getID();
+        $id = $this->getId();
 
         $sql = $conn->prepare("delete from films.films where id = :id ");
         $sql->bindParam(':id', $id);
@@ -60,16 +104,26 @@ class Film {
         return Film::connector()->query($sql)->fetchAll(PDO::FETCH_CLASS, 'Film');
     }
 
+    public static function find($id) {
+        $sql = "select * from films.films where id = $id";
+        return Film::connector()->query($sql)->fetchObject('Film');
+    }
+
     private static function connector() {
         $database = new Database("localhost", "3306", "cristiano", "6");
         return $database->connect("films");
     }
 
     public static function Create($titolo, $anno_di_produzione, $genere, $regista, $nazionalita) {
-        
-        
-        
-        
+        $conn = Film::connector();
+
+        $sql = $conn->prepare("insert into films.films (titolo,anno_di_produzione,genere,regista,nazionalita) values (:titolo,:anno_di_produzione,:genere,:regista,:nazionalita)");
+        $sql->bindParam(':titolo', $titolo);
+        $sql->bindParam(':anno_di_produzione', $anno_di_produzione);
+        $sql->bindParam(':genere', $genere);
+        $sql->bindParam(':regista', $regista);
+        $sql->bindParam(':nazionalita', $nazionalita);
+        $sql->execute();
     }
 
 }

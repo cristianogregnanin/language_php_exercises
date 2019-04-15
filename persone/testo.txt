@@ -1,0 +1,12 @@
+Una persona è caratterizzata da codice fiscale, eta e nome. 
+Uno studente è caratterizzato dai medesimi attributi della persona
+ma in più ha un numero di matricola e la sua media dei voti.
+
+Dati 4 studenti si mostri a video:
+1) lo studente piu bravo
+2) lo stundete meno bravo
+3) Tutti gli studenti bocciati
+
+
+Opzionale: 
+si mostrino a video i nomi dei genitori degli studenti bocciati. 
