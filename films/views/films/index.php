@@ -62,7 +62,7 @@ include_once '/home/cristiano/language_php_exercises/films/dto/Film.php';
                     <td><?php echo $film->getNazionalita() ?></td>
                     <td><?php echo $film->getRegista() ?></td>
                     <td><?php echo $film->getAnnoDiProduzione() ?></td>
-                    <td><a href="" >Modifica</a> | <a href="" >Elimina</a></td>
+                    <td><a href="" >Modifica</a> | <a href=<?php echo $film->getDeleteLink() ?> >Elimina</a></td>
                 </tr>
             <?php } ?>
         </table>
