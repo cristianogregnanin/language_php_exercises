@@ -5,10 +5,7 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 
-<?php
-include_once '/home/cristiano/language_php_exercises/films/dto/Film.php';
-
-?>
+<?php include_once '/home/cristiano/language_php_exercises/films/dto/Film.php'; ?>
 
 <html>
     <head>
@@ -40,7 +37,7 @@ include_once '/home/cristiano/language_php_exercises/films/dto/Film.php';
 
         <h2>Films</h2>
 
-        <a href="" >Crea film</a>
+        <a href="http://localhost:8000/views/films/new.php" >Crea film</a>
 
         <table>
             <tr>
@@ -62,7 +59,7 @@ include_once '/home/cristiano/language_php_exercises/films/dto/Film.php';
                     <td><?php echo $film->getNazionalita() ?></td>
                     <td><?php echo $film->getRegista() ?></td>
                     <td><?php echo $film->getAnnoDiProduzione() ?></td>
-                    <td><a href="" >Modifica</a> | <a href=<?php echo $film->getDeleteLink() ?> >Elimina</a></td>
+                    <td><a href=<?php echo $film->getEditLink() ?> >Modifica</a> | <a href=<?php echo $film->getDeleteLink() ?> >Elimina</a></td>
                 </tr>
             <?php } ?>
         </table>

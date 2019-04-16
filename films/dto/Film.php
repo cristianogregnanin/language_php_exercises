@@ -79,12 +79,7 @@ class Film {
         $sql->bindParam(':regista', $regista);
         $sql->bindParam(':nazionalita', $nazionalita);
 
-        $aaaaa = $sql->execute();
-        $sql->commit();
-
-        var_dump($aaaaa);
-
-        $sql->debugDumpParams();
+        $sql->execute();
     }
 
     public function delete() {
@@ -96,9 +91,13 @@ class Film {
         $sql->bindParam(':id', $id);
         $sql->execute();
     }
-    
+
     public function getDeleteLink() {
         return "http://localhost:8000/actions/films/delete.php?id={$this->getId()}";
+    }
+
+    public function getEditLink() {
+        return "http://localhost:8000/views/films/edit.php?id={$this->getId()}";
     }
 
     public static function fetchAll() {
