@@ -1,0 +1,10 @@
+Si progetti una classe Operazioni in php che prenda in input nel metodo costruttore 2
+numeri.
+Si scrivano 2 metodi: somma e prodotto che ritornino la somma e il prodotto dei
+2 numeri.
+Si istanzi all'interno di un processo figlio un oggetto di tipo Operazioni e si
+richiamino su di esso i metodi somma e prodotto stampandone a video l'output.
+Al termine dell'esecuzione il processo figlio deve terminare lasciando il
+controllo al processo padre. 
+
+
