@@ -1,0 +1,3 @@
+Si scriva un programma in linguaggio php che dati 3 numeri in input calcoli la media
+Esempio: input 5, 10, 15 ==> media 10. 
+
