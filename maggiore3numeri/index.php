@@ -1,8 +1,20 @@
 <?php
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+$a=10;  $b=15; $c=20;
 
+if($a>$b){
+
+    if ($a>$c){
+        echo "il maggiore è $a";
+    }else{
+        echo "Il maggiore è $c";
+    }
+    
+}else{
+    
+    if($b>$c){
+        echo "il maggiore è $b";
+    }else{
+        echo "Il maggiore è $c";
+    }
+}
