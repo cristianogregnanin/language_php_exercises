@@ -28,10 +28,11 @@ class Calcolatrice {
     }
 
     public function getRisultato() {
+        $this->calcola();
         return $this->risultato;
     }
 
-    public function calcola() {
+    private function calcola() {
 
         if ($this->operatore == '+')
             $this->risultato = $this->a + $this->b;

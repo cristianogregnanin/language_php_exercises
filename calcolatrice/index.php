@@ -14,12 +14,9 @@ do {
     echo "scegli l'operatore \n";
     $calcolatrice->setOperatore(readline());
 
-    $calcolatrice->calcola();
-
     $risultato = $calcolatrice->getRisultato();
     echo "il risultato è: $risultato\n";
-    
-    
+
     echo "Vuoi fare un altro calcolo? si/no\n";
     $scelta = readline();
 } while ($scelta == "si");
