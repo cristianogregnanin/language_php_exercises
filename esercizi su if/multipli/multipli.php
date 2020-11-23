@@ -1,5 +1,7 @@
 <?php
 
+//Il programma legge due numeri e controlla se il primo è multiplo del secondo..
+
 echo "inserisci il primo numero: \n";
 $a=readline();
 
