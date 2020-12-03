@@ -10,8 +10,8 @@ $c = $a + $b;
 
 echo "\nil risultato di $a + $b è: $c\n";
 
-if ($a>$b){
+if ($a > $b) {
     echo "$a è maggiore di $b";
-}else{
+} else {
     echo "$b è maggiore di $a";
 }
