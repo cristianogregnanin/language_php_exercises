@@ -1,8 +1,8 @@
 <?php
 
 do {
-    
-    $rapporto=0;
+
+    $rapporto = 0;
 
     echo "inserisci il primo numero: \n";
     $n1 = readline();
