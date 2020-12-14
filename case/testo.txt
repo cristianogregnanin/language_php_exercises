@@ -3,3 +3,13 @@ Si mostrino tutte le case appartenti alla categoria "villa".
 Si mostrino tutte le case gialle
 Si mostrino tutte le ville bianche
 
+Si mostrino tutti gli appartamenti
+Si chieda in input un numero che rappresenta i metri quadri. Si mostrino tutti 
+appartamenti che hanno più metri quadri.
+Si chiedano in input due numeri interi che rappresentano un range. Si verifichi 
+che il primo numero sia minore del secondo e quindi si mostrino tutti gli
+appartamenti la cui dimensione rientra nel range. Per verificare che un numero
+sia minore di un altro si scriva una classe RangeValidator che prende in input
+i due numeri ed esponga un metodo "verifica" che ritorni true o false.
+ 
+
