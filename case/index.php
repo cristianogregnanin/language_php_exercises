@@ -1,7 +1,7 @@
 <?php
 
-include "Casa.php";
 include "Appartamento.php";
+include "RangeValidator.php";
 
 $case = [];
 $case[0] = new Casa(150, "grigio", "villa");
@@ -11,7 +11,8 @@ $case[3] = new Casa(5150, "grigio", "villa");
 $case[4] = new Casa(6150, "grigio", "Villa");
 $case[5] = new Casa(650, "bianco", "Villa");
 $case[6] = new Appartamento(650, "bianco", "appartamento", "secondo");
-
+$case[7] = new Appartamento(50, "bianco", "appartamento", "secondo");
+$case[8] = new Appartamento(65, "bianco", "appartamento", "secondo");
 
 
 $casaMax = $case[0];
@@ -42,6 +43,55 @@ for ($i = 0; $i < count($case); $i++) {
         if (strtolower($casa->getCategoria()) == "villa")
             echo "la casa è: {$casa->getColore()} ed è una: {$casa->getCategoria()}\n";
 }
+
+foreach ($case as $casa) {
+    if (strtolower($casa->GetCategoria()) == "appartamento")
+        echo "appartamento di metri quadri: {$casa->getMetri()}\n";
+}
+
+echo "inserisci i metri quadri: \n\n";
+$metri = readline();
+$trovato = false;
+
+foreach ($case as $casa) {
+    if (strtolower($casa->GetCategoria()) == "appartamento") {
+        if ($casa->GetMetri() > $metri) {
+            echo "appartamento: {$casa->GetMetri()}\n";
+            $trovato = $casa;
+        }
+    }
+}
+
+if (!$trovato)
+    echo "appartamento non trovato";
+
+do {
+    $rangeValidator = new RangeValidator();
+
+    echo "inserisci il primo numero:\n";
+    $n1 = readline();
+    $rangeValidator->setN1($n1);
+
+    echo "inserisci il secondo numero:\n";
+    $n2 = readline();
+    $rangeValidator->setN2($n2);
+} while (!$rangeValidator->validate());
+
+$trovato = false;
+
+foreach ($case as $casa) {
+    if (strtolower($casa->GetCategoria()) == "appartamento") {
+        if ($casa->GetMetri() > $n1 && $casa->GetMetri() < $n2) {
+            echo "appartamento: {$casa->GetMetri()}\n";
+            $trovato = $casa;
+        }
+    }
+}
+
+if (!$trovato)
+    echo "appartamento non trovato";
+
+
 
 
 
