@@ -1,2 +1,2 @@
 Si vuole scrivere un programma che calcoli l'area e il perimetro di cerchi, triangoli e quadrilateri.
-Il programma deve essere strutturato utilizzando la OOP. In particolare si organizzino le classi per utilizzare il principio dell'ereditarietà. 
+Il programma deve essere strutturato utilizzando la OOP. In particolare si organizzino le classi utilizzando il principio dell'ereditarietà. 
