@@ -1,0 +1,4 @@
+Si chiedano in input 5 numeri 
+attraverso un ciclo.
+al termine del ciclo, si mostri
+a video la somma dei numeri.
