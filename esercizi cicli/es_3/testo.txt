@@ -1,0 +1,3 @@
+Si chiedano in input 6 numeri e, per ogni numero, si mostri a video
+il messaggio "numero pari" se il numero è pari oppure "numero dispari"
+se il numero è dispari.
