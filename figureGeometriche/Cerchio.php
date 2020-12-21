@@ -1,6 +1,6 @@
 <?php
 
-include 'Figura.php';
+include_once 'Figura.php';
 
 class Cerchio extends Figura {
     

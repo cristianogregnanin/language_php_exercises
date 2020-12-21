@@ -10,7 +10,7 @@ $i = 0;
 $somma = 0;
 
 while ($i < 6) {
-    echo "inserire un valore\n";
+    echo "inserire un valore: \n";
     $valore = readline();
     $somma = $somma + $valore;
     $i = $i + 1;

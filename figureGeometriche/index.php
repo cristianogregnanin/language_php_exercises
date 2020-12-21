@@ -10,12 +10,19 @@ include "Cerchio.php";
 include "Triangolo.php";
 include "Quadrilatero.php";
 
-$figure=[];
-
-array_push($figure, new Cerchio(5));
-array_push($figure, new Cerchio(10));
 
 $cerchio = new Cerchio(15);
-echo $cerchio->Area();
-echo $cerchio->Perimetro();
+echo "L'area del cerchio di raggio {$cerchio->getRaggio()} è: {$cerchio->Area()}\n";
+echo "Il perimetro del cerchio di raggio {$cerchio->getRaggio()} è: {$cerchio->Perimetro()}\n\n";
+
+
+$triangolo = new Triangolo(15,10,12,16);
+echo "L'area del triangolo {$triangolo->Area()}\n";
+echo "Il perimetro del triangolo è: {$triangolo->Perimetro()}\n\n";
+
+
+
+$quadrilatero = new Quadrilatero(15,10);
+echo "L'area del quadrilatero {$quadrilatero->Area()}\n";
+echo "Il perimetro del quadrilatero è: {$quadrilatero->Perimetro()}\n\n";
 
