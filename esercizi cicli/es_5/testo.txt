@@ -1,0 +1,2 @@
+Estrarre numeri casuali tra -100 e 100 fintanto che ne ottengo esattamente 10 positivi pari. Stampare i
+numeri dispari estratti e il numero totale di estrazioni.

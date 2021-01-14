@@ -1,0 +1,2 @@
+Inserire una serie di numeri interi e sommarli. Interrompere l’immissione al sesto valore pari e visualizzare
+quindi in output la somma ottenuta.

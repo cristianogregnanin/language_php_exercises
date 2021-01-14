@@ -1,0 +1,2 @@
+Realizzare un algoritmo che accetta in input solo un numero il cui valore assoluto sia compreso tra 5 e 10.
+Al termine stampare il numero inserito.
