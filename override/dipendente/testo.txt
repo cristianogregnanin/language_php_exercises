@@ -1,0 +1,21 @@
+
+Definire la classe Dipendente avente i seguenti attributi:
+Nome;
+Cognome;
+Matricola; (codice alfanumerico).
+
+Definire la sottoclasse classe Impiegato avente i seguenti attributi:
+Numero Ufficio;
+Stipendio;
+
+Definire la sottoclasse (di Dipendente) Dirigente avente i seguenti attributi:
+Stipendio;
+Livello; (1, 2, 3, 4, 5), verificare che il livello sia compreso in [1,5]
+
+Definire i metodi costruttori per tutte e tre le classi.
+
+Definire nella classe Dipendente un metodo stampa() che, data un'istanza
+della classeb Dipendente, stampa a video le informazioni in essa contenute;
+
+Ridefinire correttamente nelle classi Impiegato e Dirigente il metodo void
+stampa().Testare nel main() i metodi sopra definiti.
