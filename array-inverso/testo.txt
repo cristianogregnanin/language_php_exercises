@@ -1,0 +1,2 @@
+si scriva un programma che chiede in input 5 numeri e li salvi in un array.
+Si stampi quindi a video l'array in ordine inverso
