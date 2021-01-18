@@ -1,0 +1,2 @@
+Popolare un array di 4 interi, stamparne a video il
+contenuto.
