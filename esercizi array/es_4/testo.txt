@@ -1,0 +1,3 @@
+Dato un array $numeri, inserire 10 numero interi. Chiedere all'utente di
+inserire il numero da cercare e visualizzare a video se il numero è stato
+trovato e la sua posizione.
