@@ -2,9 +2,19 @@
 
 session_start();
 
+if (!isset($_SESSION['videogiochi']))
+    $_SESSION['videogiochi'] = [];
+else
+    $p = $_SESSION['videogiochi'];
 
-echo "nome del videogioco: {$_POST['gioco']}";
-echo "punteggio del videogioco: {$_POST['punti']}";
 
-$_SESSION['gioco']=$_POST['gioco'];
-$_SESSION['punti']=$_POST['punti'];
+if (isset($p[$_POST['gioco']])) {
+    if ($p[$_POST['gioco']] < $_POST['punti'])
+        $p[$_POST['gioco']] = $_POST['punti'];
+}else {
+    $p[$_POST['gioco']] = $_POST['punti'];
+}
+
+
+var_dump($p);
+$_SESSION['videogiochi'] = $p;
