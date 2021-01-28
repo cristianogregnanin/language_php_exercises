@@ -1,5 +1,13 @@
 <?php session_start(); ?>
-<?php var_dump($_SESSION); ?>
+<?php
+$max = 0;
+foreach ($_SESSION['videogiochi'] as $key => $value) {
+    if ($max < $value) {
+        $max = $value;
+        $gioco = $key;
+    }
+}
+?>
 
 <!DOCTYPE html>
 
@@ -8,9 +16,16 @@
         <title>Punteggi videogames</title>
     </head>
     <body>
-        <p>il gioco è: <?php echo $_SESSION['gioco']; ?> </p>
-        <br><br>
-        <p>il punteggio è: <?php echo $_SESSION['punti']; ?> </p>
+        <ul>
+            <?php foreach ($_SESSION['videogiochi'] as $key => $value) { ?>
+                <li><?php echo "$key: $value" ?></li>
+            <?php } ?>
+        </ul>
+        <br>
+
+        <p>il gioco con il punteggio maggiore è : <?php echo $gioco ?> </p>
+        <br>    
+        <p>il suo punteggio è: <?php echo $max; ?> </p>
 
     </body>
 </html>
