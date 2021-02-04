@@ -1,0 +1,32 @@
+Si vuole realizzare un prototipo di sito Ecommerce.
+Il sito dovrà mostrare un catalogo di prodotti.
+Gli utenti dopo essersi autenticati avranno la possibilità di acquistare cliccando sul pulsante "acquista"
+Al termine dello shopping l'utente può visualizzare il carrello.
+
+Dettagli: 
+Un utente è caratterizzato da: email,password,ruolo (admin, shopper)
+Un prodotto è caratterizzato da: nome, marca, prezzo
+
+Per ogni prodotto mostrare un form per la selezione della quantità da acquistare.
+Il carrello deve dare la possibilità di eliminare un prodotto dal carrello stesso. 
+
+
+Caso d'uso principale:
+1) L'utente si autentica presso il sito: (/login), oppure si registra (/signup).
+2) L'utente aggiunge uno o più prodotti al carrello 
+3) L'utente può: confermare il carrello, modificare il carrello, svuotare il carrello.
+4) L'utente non autenticato non può aggiungere prodotti al carrello.
+
+
+Workflow consigliato:
+1) Realizzare le viste di login e signup
+2) Realizzare la tabella Users nel database
+3) Realizzare la logica di business per far autenticare un utente, osservazione: l'utente deve rimanere autenticato mentre naviga da una pagina all'altra (usare la sessione)
+4) Realizzare le viste /products e products/:id
+5) Realizzare la tabella Products
+6) Realizzare la pagina /checkout
+
+
+Opzionale:
+Realizzare una pagina di gestione dei prodotti che permetta di fare CRUD sulla tabella Products, tale pagina deve essere visibile solo agli amministratori
+
