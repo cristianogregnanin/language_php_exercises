@@ -16,7 +16,7 @@ if (strcmp($password, $password_confirmation) > 0) {
 $db = new Database('localhost', 3306, 'cristiano', '6');
 $ecommerce = $db->connect('ecommerce');
 
-$sql = $ecommerce->prepare("select * from ecommerce.users where email=:email");
+$sql = $ecommerce->prepare("select id from ecommerce.users where email=:email limit 1");
 
 $sql->bindParam(":email", $email);
 $sql->execute();

@@ -1,6 +1,7 @@
 Si vuole realizzare un prototipo di sito Ecommerce.
 Il sito dovrà mostrare un catalogo di prodotti.
-Gli utenti dopo essersi autenticati avranno la possibilità di acquistare cliccando sul pulsante "acquista"
+Gli utenti dopo essersi autenticati avranno la possibilità di acquistare
+cliccando sul pulsante "acquista".
 Al termine dello shopping l'utente può visualizzare il carrello.
 
 Dettagli: 
@@ -15,14 +16,14 @@ Caso d'uso principale:
 1) L'utente si autentica presso il sito: (/login), oppure si registra (/signup).
 2) L'utente aggiunge uno o più prodotti al carrello 
 3) L'utente può: confermare il carrello, modificare il carrello, svuotare il carrello.
-4) L'utente non autenticato non può aggiungere prodotti al carrello.
+4) L'utente può aggiungere prodotti al carrello solamente se autenticato.
 
 
 Workflow consigliato:
-1) Realizzare le viste di login e signup
+1) Realizzare le viste di login, signup, logout
 2) Realizzare la tabella Users nel database
 3) Realizzare la logica di business per far autenticare un utente, osservazione: l'utente deve rimanere autenticato mentre naviga da una pagina all'altra (usare la sessione)
-4) Realizzare le viste /products e products/:id
+4) Realizzare le viste /products/index.php
 5) Realizzare la tabella Products
 6) Realizzare la pagina /checkout
 

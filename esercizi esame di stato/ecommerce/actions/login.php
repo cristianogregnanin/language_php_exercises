@@ -1,6 +1,9 @@
 <?php
 
 include '../Database.php';
+include '../dto/User.php';
+
+session_start();
 
 $email = $_POST['email'];
 $password = $_POST['password'];
@@ -8,17 +11,21 @@ $password = $_POST['password'];
 $db = new Database('localhost', 3306, 'cristiano', '6');
 $ecommerce = $db->connect('ecommerce');
 
-$sql = $ecommerce->prepare("select * from ecommerce.users where password=:password and email=:email limit 1");
+$sql = $ecommerce->prepare("select email,role,id from ecommerce.users where password=:password and email=:email limit 1");
 
 $sql->bindParam(":email", $email);
 $sql->bindParam(":password", $password);
 $sql->execute();
 
-$risultato = $sql->fetchAll();
+$users = $sql->fetchAll(PDO::FETCH_CLASS, 'User');
 
-if (count($risultato))
-    echo "utente trovato";
-else
-    echo "utente non trovato";
+if (count($users) > 0) {
 
+    $_SESSION['current_user'] = $users[0];
+    header('Location: http://localhost:8000/views/products/index.php');
+    exit;
+} else {
+    header('Location: http://localhost:8000/views/login.php');
+    exit;
+}
 ?>
