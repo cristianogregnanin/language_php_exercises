@@ -1,5 +1,16 @@
 <?php
 
+spl_autoload_register(function ($class) {
+
+    $sources = array("$class.php", "../../$class.php");
+
+    foreach ($sources as $source) {
+        if (file_exists($source)) {
+            require_once $source;
+        }
+    }
+});
+
 class Product {
 
     private $id, $name, $brand, $price;
@@ -33,7 +44,12 @@ class Product {
     }
 
     public static function fetchAll() {
-        
+
+        $db = new Database('localhost', 3306, 'cristiano', '6');
+        $ecommerce = $db->connect('ecommerce');
+
+        $sql = "select * from ecommerce.products";
+        return $ecommerce->query($sql)->fetchAll(PDO::FETCH_CLASS, 'Product');
     }
 
 }
