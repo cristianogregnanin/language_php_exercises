@@ -1,5 +1,7 @@
 <?php
 
+include '../classes.php';
+
 class User {
 
     function getEmail() {
@@ -28,6 +30,16 @@ class User {
 
     public function getId() {
         return $this->id;
+    }
+
+    public static function find($id) {
+        $sql = "select id,mail,name,role from ecommerce.users where id = $id";
+        return User::connector()->query($sql)->fetchObject('User');
+    }
+
+    private static function connector() {
+        $database = new Database("localhost", "3306", "cristiano", "6");
+        return $database->connect("ecommerce");
     }
 
     /*
@@ -75,15 +87,8 @@ class User {
       return Film::connector()->query($sql)->fetchAll(PDO::FETCH_CLASS, 'Film');
       }
 
-      public static function find($id) {
-      $sql = "select * from films.films where id = $id";
-      return Film::connector()->query($sql)->fetchObject('Film');
-      }
 
-      private static function connector() {
-      $database = new Database("localhost", "3306", "cristiano", "6");
-      return $database->connect("films");
-      }
+
 
       public static function Create($titolo, $anno_di_produzione, $genere, $regista, $nazionalita) {
       $conn = Film::connector();

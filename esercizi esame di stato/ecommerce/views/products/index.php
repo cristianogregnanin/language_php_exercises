@@ -1,18 +1,11 @@
-<?php 
+<?php
+include '../../partial/session.php';
 
-include '../../partial/session.php'; 
-
-
-
-include '../Database.php';
-include '../../dto/User.php';
-include '../../dto/Product.php';
+include '../../classes.php';
 
 session_start();
 
 $products = Product::fetchAll();
-
-
 ?>
 
 <html>
@@ -31,9 +24,9 @@ $products = Product::fetchAll();
                 <li><?php echo $product->getPrice() ?></li>
             </ul>
 
-            <form action="add_to_cart" method="POST">
+            <form action="../../actions/add_to_cart.php" method="POST">
                 <input type="number" name="quantita" placeholder="quantita">
-                <input type="hidden" name="id" value="<?php $product->getId() ?>">
+                <input type="hidden" name="id" value="<?php echo $product->getId(); ?>">
                 <input type="submit" value="submit" >
             </form>
 

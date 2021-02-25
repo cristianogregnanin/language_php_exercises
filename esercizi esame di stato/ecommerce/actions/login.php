@@ -1,16 +1,6 @@
 <?php
 
-spl_autoload_register(function ($class) {
-
-    $sources = array("../dto/$class.php", "$class.php","../$class.php");
-
-    foreach ($sources as $source) {
-        if (file_exists($source)) {
-            var_dump("richiedo: $source \n\n");
-            require_once $source;
-        }
-    }
-});
+include '../classes.php';
 
 session_start();
 
