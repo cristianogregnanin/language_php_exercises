@@ -1,0 +1,3 @@
+Si generi un processo figlio. Il padre deve attendere la terminazione del figlio. 
+Per comodita sospendere il figlio per 60 secondi prima di tornare al processo padre
+
