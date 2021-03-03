@@ -26,8 +26,8 @@ class Cart {
         $conn = Cart::connector();
 
         $sql = $conn->prepare("insert into ecommerce.carts (user_id,product_id,quantita) values (:user_id,:product_id,:quantita)");
-        $sql->bindParam(':user_id', $user_id);
-        $sql->bindParam(':product_id', $product_id);
+        $sql->bindParam(':user_id', $shopperId);
+        $sql->bindParam(':product_id', $productId);
         $sql->bindParam(':quantita', $quantita);
         $sql->execute();
         
