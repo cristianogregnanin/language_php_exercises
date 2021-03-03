@@ -21,7 +21,16 @@ class Cart {
     function getQuantita() {
         return $this->quantita;
     }
-
+    
+    public function delete(){
+        
+    }
+    
+    public function update(){
+        
+    }
+    
+   
     public static function add($shopperId, $productId, $quantita) {
         $conn = Cart::connector();
 
