@@ -42,8 +42,7 @@ class Product {
         $sql = "select * from ecommerce.products";
         return $ecommerce->query($sql)->fetchAll(PDO::FETCH_CLASS, 'Product');
     }
-    
-    
+        
     public static function find($id) {
         $sql = "select * from ecommerce.products where id = $id";
         return Product::connector()->query($sql)->fetchObject('Product');

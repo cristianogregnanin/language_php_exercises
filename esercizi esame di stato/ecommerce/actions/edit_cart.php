@@ -10,12 +10,13 @@ $itemline = Cart::find($_POST['id']);
 $user = $_SESSION['current_user'];
 
 
+
 if ($quantita > 0) {
-    //allora modifichiamo la quantita nel record
-    //update()
+    $itemline->setQuantita($quantita);
+    $itemline->save();
 } else {
-    //rimuoviamo la riga dal DB
-    //delete();
+    $itemline->delete();
 }
 
-header('Location: http://localhost:8000/views/products/index.php');
+header('Location: http://localhost:8000/views/carts/index.php');
+exit;

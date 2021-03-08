@@ -31,7 +31,7 @@ $line_items = Cart::fetchAll($current_user);
 
             <form action="../../actions/edit_cart.php" method="POST">
                 <input type="number" name="quantita" value="<?php echo $line->getQuantita(); ?>">
-                <input type="hidden" name="id" value="<?php echo $line->getProductId(); ?>">
+                <input type="hidden" name="id" value="<?php echo $line->getId(); ?>">
                 <input type="submit" value="submit" >
             </form>
 
