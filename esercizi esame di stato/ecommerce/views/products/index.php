@@ -32,6 +32,8 @@ $products = Product::fetchAll();
 
 
         <?php } ?>
+        
+        <a href="../carts/index.php">Vai al carrello</a>
 
 
     </body>

@@ -1,5 +1,5 @@
 <?php
-include '../dto/User.php';
+include 'dto/User.php';
 
 session_start();
 

@@ -25,7 +25,7 @@ Workflow consigliato:
 3) Realizzare la logica di business per far autenticare un utente, osservazione: l'utente deve rimanere autenticato mentre naviga da una pagina all'altra (usare la sessione)
 4) Realizzare le viste /products/index.php
 5) Realizzare la tabella Products
-6) Realizzare la pagina /checkout
+6) Realizzare la pagina /carts/index.php
 
 
 Opzionale:
