@@ -8,37 +8,35 @@
 include 'computer.php';
 
 $computers = [];
-$n = 3;
+$n = 5;
 
 for ($i = 0; $i < $n; $i++) {
-    echo "inserisci memoria ram: ";
-    $mRam = readline();
-    echo "inserisci memoria hdd: ";
-    $mHdd = readline();
-    $computer = new computer("I3",$mHdd, $mRam);
-    $computers[$i] = $computer;
+    $mRam = readline("inserisci memoria ram: ");
+    $mHdd = readline("inserisci memoria hdd: ");
+    $mCpu = readline("inserisci il processore: ");
+    $computers[$i] = new computer($mCpu, $mHdd, $mRam);
 }
 
-$grande = 1;
-for ($i = 0; $i < $n; $i++) {
-    if($computers[$i]->getHdd() > $computers[$grande]->getHdd())
-        $grande = $i;
+$max = $computers[0];
+for ($i = 1; $i < $n; $i++) {
+    if ($computers[$i]->getHdd() > $max->getHdd())
+        $max = $computers[$i];
 }
-//echo "{$grande}\n";
-echo "i dati del computer che ha hdd più grande sono: hdd: {$computers[$grande]->getHdd()} ram:{$computers[$grande]->getRam()} cpu: {$computers[$grande]->getCpu()}\n";
 
-$piccolo = 1;
-for ($i = 0; $i < $n; $i++) {
-    if($computers[$i]->getRam() < $computers[$piccolo]->getRam())
-        $piccolo = $i;
+echo "i dati del computer che ha hdd più grande sono: hdd: {$max->getHdd()} ram:{$max->getRam()} cpu: {$max->getCpu()}\n";
+
+$piccolo = $computers[0];
+for ($i = 1; $i < $n; $i++) {
+    if ($computers[$i]->getRam() < $piccolo->getRam())
+        $piccolo = $computers[$i];
 }
-//echo "{$piccolo}\n";
-echo "i dati del computer che ha ram più piccola sono: hdd: {$computers[$piccolo]->getHdd()} ram:{$computers[$piccolo]->getRam()} cpu: {$computers[$piccolo]->getCpu()}\n";
+
+echo "i dati del computer che ha ram più piccola sono: hdd: {$piccolo->getHdd()} ram:{$piccolo->getRam()} cpu: {$piccolo->getCpu()}\n";
 
 echo "inserisci memoria ram: ";
 $ram = readline();
 
 for ($i = 0; $i < $n; $i++) {
-    if($computers[$i]->getRam() >= $ram)
+    if ($computers[$i]->getRam() >= $ram)
         echo "i dati del computer con ram maggiore o uguale sono: hdd: {$computers[$i]->getHdd()} ram:{$computers[$i]->getRam()} cpu: {$computers[$i]->getCpu()}\n";
 }

@@ -1,8 +1,8 @@
 Si costruisca una classe che rappresenti un computer, in particolare che abbia 3 variabili private: cpu, ram, hdd.
 Si chiedano in input 5 computers (con le relative proprietà) e si inseriscano in un array.
 Al termine dell'inserimento si mostri a video: 
-1) il computer l'hdd più grande
-2) il comptuer con meno memoria ram
+1) il computer con l'hdd più grande
+2) il computer con meno memoria ram
 3) data una certa quantità di memoria ram chiesta in input, si mostrino a video tutti i computer che hanno una quantità maggiore o uguale. 
 
 
