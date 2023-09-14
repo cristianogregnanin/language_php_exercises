@@ -10,7 +10,7 @@ for ($i = 0; $i < 5; $i++)
 
 echo "\nElementi al contrario: ";
 
-for ($i = count($a)-1; $i >= count($a); $i--)
+for ($i = count($a)-1; $i >= 0; $i--)
 {
     echo "$a[$i]-";
 }
