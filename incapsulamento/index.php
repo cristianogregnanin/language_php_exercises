@@ -7,11 +7,38 @@
  */
 include 'computer.php';
 
-$computer = new computer("I3","1TB","1GB");
+$computers = [];
+$n = 3;
 
-echo "il computer ha processore: {$computer->getCpu()}\n";
-echo "il computer ha ram: {$computer->getRam()}\n";
-echo "il computer ha hardisk: {$computer->getHdd()}\n";
+for ($i = 0; $i < $n; $i++) {
+    echo "inserisci memoria ram: ";
+    $mRam = readline();
+    echo "inserisci memoria hdd: ";
+    $mHdd = readline();
+    $computer = new computer("I3",$mHdd, $mRam);
+    $computers[$i] = $computer;
+}
 
-$computer->setHdd("2TB");
-echo "il computer ha un nuovo hardisk: {$computer->getHdd()}\n";
+$grande = 1;
+for ($i = 0; $i < $n; $i++) {
+    if($computers[$i]->getHdd() > $computers[$grande]->getHdd())
+        $grande = $i;
+}
+//echo "{$grande}\n";
+echo "i dati del computer che ha hdd più grande sono: hdd: {$computers[$grande]->getHdd()} ram:{$computers[$grande]->getRam()} cpu: {$computers[$grande]->getCpu()}\n";
+
+$piccolo = 1;
+for ($i = 0; $i < $n; $i++) {
+    if($computers[$i]->getRam() < $computers[$piccolo]->getRam())
+        $piccolo = $i;
+}
+//echo "{$piccolo}\n";
+echo "i dati del computer che ha ram più piccola sono: hdd: {$computers[$piccolo]->getHdd()} ram:{$computers[$piccolo]->getRam()} cpu: {$computers[$piccolo]->getCpu()}\n";
+
+echo "inserisci memoria ram: ";
+$ram = readline();
+
+for ($i = 0; $i < $n; $i++) {
+    if($computers[$i]->getRam() >= $ram)
+        echo "i dati del computer con ram maggiore o uguale sono: hdd: {$computers[$i]->getHdd()} ram:{$computers[$i]->getRam()} cpu: {$computers[$i]->getCpu()}\n";
+}
