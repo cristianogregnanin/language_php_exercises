@@ -5,7 +5,7 @@ $a = [];
 for ($i = 0; $i < 5; $i++)
 {
     echo "\nInserire un numero intero: ";
-    $a[$i-1] = readline();
+    $a[$i] = readline();
 }
 
 echo "\nElementi al contrario: ";
