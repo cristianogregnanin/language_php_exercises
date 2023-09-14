@@ -1,14 +1,16 @@
 <?php
 
-$n = 5;
-$numeri = [];
+$a = [];
 
-for ($i = 0; $i < $n; $i++) {
-    echo "inserisci il numero: \n";
-    $numeri[$i] = readline();
+for ($i = 0; $i < 5; $i++)
+{
+    echo "\nInserire un numero intero: ";
+    $a[$i-1] = readline();
 }
 
-$end = count($numeri) - 1;
-for ($i = $end; $i >= 0; $i--) {
-    echo "numero: $numeri[$i]\n";
+echo "\nElementi al contrario: ";
+
+for ($i = count($a)-1; $i >= count($a); $i--)
+{
+    echo "$a[$i]-";
 }
