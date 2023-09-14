@@ -1,13 +1,16 @@
 <?php
 
 $a = [];
-$n = 4;
 
-for ($i = 0; $i < $n; $i++) {
-    echo "inserisci il numero: \n\n";
-    $a[$i] = readline();
+for ($i = 0; $i < 4; $i++)
+{
+    echo "\nInserire un numero intero: ";
+    $a[$i-1] = readline();
 }
 
-for ($i = 0; $i < count($a); $i++) {
-    echo "elemento: $a[$i]\n";
+echo "\nElementi: ";
+
+for ($i = 0; $i < count($a); $i++)
+{
+    echo "$a[$i]-";
 }
