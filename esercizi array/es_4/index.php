@@ -1,23 +1,18 @@
 <?php
 
 $numeri = [];
-$posizione = -1;
-$n = 10;
 
-for ($i = 0; $i < $n; $i++) {
-    echo "inserisci il numero: \n";
-    $numeri[$i] = readline();
+for ($i = 0; $i < 9; $i++)
+{
+    echo "\nInserire un numero intero: ";
+    $a[$i] = readline();
 }
 
-echo "\ninserisci il numero da ricercare: \n";
-$numero = readline();
+echo "\nQuale elemento vuoi cercare?\n";
+$ricerca = readline();
 
-for ($i = 0; $i < $n; $i++) {
-    if ($numeri[$i] == $numero)
-        $posizione = $i;
+for ($i = 0; $i < count($numeri); $i++)
+{
+    if($ricerca == $numeri[$i])
+    echo "Il numero $numeri[$i] è stato trovato in posizione $i";
 }
-
-if ($posizione >= 0)
-    echo "\n$numero trovato in posizione: $posizione";
-else
-    echo "\n$numero non presente nell'array";
