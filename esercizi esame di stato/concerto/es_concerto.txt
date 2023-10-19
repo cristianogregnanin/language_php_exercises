@@ -64,7 +64,7 @@ Ci viene ritornato l’oggetto creato.
 
 
 $concerto = Concerto::Create($params);
-RItorna un oggetto di tipo Concerto. 
+Ritorna un oggetto di tipo Concerto. 
 $params è un array associativo dove le chiavi corrispondono ai campi della tabella concerti.
 
 
@@ -74,14 +74,14 @@ Metodo find è di tipo concerto perchè restituisce il relativo oggetto che sodd
 Come parametro gli viene passato un id.
 Effettuerà una ricerca sul database per il record corrispondente all’id inserito.
 $concerto = Concerto::Find($id);
-RItorna un oggetto di tipo Concerto. 
+Ritorna un oggetto di tipo Concerto. 
 $id è un intero
 
 
 FIND ALL
 Effettua una ricerca sul database mostrando tutti i record presenti nella tabella concerto.
 $concerti = Concerto::FindAll();
-RItorna un array contenente elementi di tipo concerto.
+Ritorna un array contenente elementi di tipo concerto.
 
 
 
@@ -117,7 +117,7 @@ La classe da utilizzare per interfacciarsi con il database è PDO, in particolar
 Si rinvia alla documentazione della classe per ulteriori approfondimenti.
 
 
-Per la connessione al database si consiglia di realizzare una classe DbManager all’interno del file db_manager.php e di utilizzarla ogni qualvolta risulti necessario interfacciarsi con il database.
+Per la connessione al database realizzare una classe DbManager all’interno del file db_manager.php e di utilizzarla ogni qualvolta risulti necessario interfacciarsi con il database.
 
 
 
