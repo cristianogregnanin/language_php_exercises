@@ -1,0 +1,153 @@
+CLASSE CONCERTO
+Consegna:
+Dato un file php contenente la classe concerto creare la mappatura tra Oggetto e Classe con i suoi determinati attributi privati metodi di accesso (Get e Set) per rispettare il principio di incapsulamento, metodi statici e di istanza.
+
+Viene creato un file con estensione concerto.php contenente la classe Concerto
+
+
+La classe Concerto mappa la tabella concerti del database organizzazione_concerti.
+
+STRUTTURA DELLA CLASSE:
+Attributi
+La classe implementa i seguenti attributi:
+-id → è di tipo Intero. Non deve essere impostato manualmente o modificato.
+-codice → è una stringa alfanumerica univoca per ogni concerto.
+-titolo → è una stringa contenente il titolo del concerto.
+-descrizione → è una stringa contenente la descrizione del concerto.
+-data → è di tipo DateTime e rappresenta la data del concerto.
+
+Gli attributi sono scritti seguendo la notazione camelcase come da documentazione PHP.
+Tutti gli attributi sopra riportati devono essere privati poiché viene rispettato il principio dell'incapsulamento necessario per limitare l’accesso diretto ai dati da parte degli utenti.
+Per cui dato che gli attributi sono privati usufruiamo di adeguati metodi Get e Set per rispettivamente ritornare e assegnare valori agli attributi.
+
+
+
+
+
+METODI GET E SET ATTRIBUTI
+
+ID
+L’attributo Id implementa un metodo Get di tipo Int che ne restituisce il valore.
+L’attributo Id non presenta il metodo Set dato che il suo valore non può essere impostato o modificato. 
+
+CODICE
+L’attributo codice implementa un metodo Get di tipo string che restituisce il codice del concerto.
+Implementa anche un metodo Set di tipo void per impostare e modificare il valore dell’attributo. Set accetta come parametro una stringa.
+
+TITOLO
+L’attributo titolo implementa un metodo Get di tipo string che restituisce il titolo del concerto.
+Implementa anche un metodo Set di tipo void per impostare e modificare il valore dell’attributo. Set accetta come parametro una stringa.
+
+DESCRIZIONE
+L’attributo descrizione implementa un metodo Get di tipo string che restituisce la descrizione del concerto.
+Implementa anche un metodo Set di tipo void per impostare e modificare il valore dell’attributo. Set accetta come parametro una stringa.
+
+DATA
+L’attributo data implementa un metodo Get di tipo DateTime che restituisce la data del concerto.
+Implementa anche un metodo Set di tipo void per impostare e modificare il valore dell’attributo. Set accetta come parametro un dato di tipo DateTime.
+*mettere anche la possibilità di mettere data in stringa*
+
+
+
+
+
+METODI
+La classe deve essere in grado di svolgere le operazioni di tipo CRUD(Create, Read, Update, Delete) e per questo andiamo a creare dei metodi statici e di istanza che rappresentino queste operazioni.
+
+METODI STATICI
+
+CREATE
+Il metodo create è di tipo statico poiché l’operazione di creazione non è effettuata su un oggetto ma anzi lo andiamo a creare.
+Come parametri devono essere passati tutti gli attributi, ovvero: codice, titolo, descrizione e data inseriti in un array di tipo associativo
+Ad ogni parametro assegnamo un valore.
+Ci viene ritornato l’oggetto creato. 
+
+
+$concerto = Concerto::Create($params);
+RItorna un oggetto di tipo Concerto. 
+$params è un array associativo dove le chiavi corrispondono ai campi della tabella concerti.
+
+
+
+FIND
+Metodo find è di tipo concerto perchè restituisce il relativo oggetto che soddisfa la condizione.
+Come parametro gli viene passato un id.
+Effettuerà una ricerca sul database per il record corrispondente all’id inserito.
+$concerto = Concerto::Find($id);
+RItorna un oggetto di tipo Concerto. 
+$id è un intero
+
+
+FIND ALL
+Effettua una ricerca sul database mostrando tutti i record presenti nella tabella concerto.
+$concerti = Concerto::FindAll();
+RItorna un array contenente elementi di tipo concerto.
+
+
+
+METODI DI ISTANZA
+
+DELETE
+Il metodo delete è di tipo void e permette di eliminare un oggetto con l’ausilio del metodo find (che restituisce un oggetto).
+$concerto = Concerto::Find($id);
+$concerto->delete();
+
+UPDATE
+Il metodo update è di tipo void e permette di modificare un oggetto con l’ausilio del metodo find (che restituisce un oggetto).
+Può essere implementato in modo tale da avere come parametro un array associativo chiave:valore contenente i valori da modificare.
+$concerto = Concerto::Find($id);
+$concerto = $concerto->update($params);
+
+
+$params è un array associativo dove le chiavi corrispondono ai campi della tabella concerti.
+$concerto è un oggetto di tipo Concerto e rappresenta il record appena modificato
+
+
+
+SHOW
+Il metodo show permette di visualizzare un oggetto. 
+$concerto = Concerto::Find($id);
+$concerto->show();
+
+
+
+IMPLEMENTAZIONE
+Per connettersi al database è obbligatorio usare nome utente (non root) e password presenti in un file config.txt
+La classe da utilizzare per interfacciarsi con il database è PDO, in particolare i metodi query, bind, fetchAll, fetchObject, execute.
+Si rinvia alla documentazione della classe per ulteriori approfondimenti.
+
+
+Per la connessione al database si consiglia di realizzare una classe DbManager all’interno del file db_manager.php e di utilizzarla ogni qualvolta risulti necessario interfacciarsi con il database.
+
+
+
+
+ESEMPIO DI UTILIZZO
+$ php concerto.php
+premere 1 per creare un record
+premere 2 per mostrare un record
+premere 3 per modificare un record
+premere 4 per eliminare un record
+premere 5 per mostrare tutti i records presenti nella tabella
+premere 0 per terminare il programma
+Osservazione: 
+i punti 1 e 3 richiedono che l’utente inserisca i dati per creare o modificare il record.
+
+
+
+
+VINCOLI OBBLIGATORI
+Il software deve essere composto necessariamente dai seguenti files:
+concerto.php
+db_manager.php
+organizzazione_concerti.sql
+config.txt
+
+
+
+
+
+
+
+
+
