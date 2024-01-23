@@ -1,0 +1,8 @@
+---
+- hosts: riga1,riga2,riga3,riga4,!cristiano
+  vars:
+    phpstorm_version: 2023.2.4
+  roles:
+    - phpstorm
+
+
