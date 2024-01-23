@@ -1,0 +1,21 @@
+<html>
+<body>
+
+<div id="prova1">
+    <h2>The XMLHttpRequest Object</h2>
+    <button type="button" onclick="loadDoc()">vedi yaml</button>
+</div>
+
+<script>
+    function loadDoc() {
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function () {
+            document.getElementById("prova1").innerHTML = this.responseText;
+        }
+        xhttp.open("GET", "install_phpstorm.yml");
+        xhttp.send();
+    }
+</script>
+
+</body>
+</html>
