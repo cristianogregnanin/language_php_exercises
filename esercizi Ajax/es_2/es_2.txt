@@ -5,20 +5,20 @@ Creare una pagina web interattiva in cui i risultati di una ricerca vengano cari
 
 Passi da seguire:
 
-1 - Preparazione del documento HTML:
+1 - Preparazione del documento HTML (index.html):
 Crea un documento HTML base con una text box per la ricerca e un'area dove verranno visualizzati i risultati.
 
-2 - Script JavaScript (script.js):
+2 - Script JavaScript (suggerimenti.js):
 Crea uno script JavaScript che gestirà la ricerca e la chiamata AJAX al server remoto.
 
-3 - Server Remoto:
+3 - Server Remoto (getParole.php):
 Configura un server remoto che possa gestire le richieste AJAX e restituire i risultati della ricerca in un formato appropriato. Assicurati che il server risponda correttamente alle richieste GET e restituisca i dati in un formato supportato dal tuo script JavaScript.
 
 Ecco un esempio di una risposta del server in formato JSON:
 {"data":["ciao","a","tutti"]}
 
 
-4 - Costruzione DB:
+4 - Costruzione DB (seed.sql):
 Reallizza un DB con una tabella Parole che abbia almeno 2 campi: id,parola. 
 
 Con questi passaggi, dovresti essere in grado di creare una pagina web che esegue una ricerca dinamica, caricando i risultati dal server remoto utilizzando AJAX.
